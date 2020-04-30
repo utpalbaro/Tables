@@ -1,0 +1,103 @@
+/* For now I am sticking to simplistic w3c site css */
+
+.toolbar button {
+    background-color: #4CAF50; /* Green background */
+    border: 1px solid green; /* Green border */
+    color: white; /* White text */
+    padding: 8px 8px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+}
+
+.toolbar button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+}
+
+.toolbar button:hover {
+    background-color: #3e8e41;
+}
+
+.table-details {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 100ms ease-in-out;
+    border: 1px solid black;
+    z-index: 10;
+
+    font: 14px Arial, sans-serif;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    width: 200px;
+    max-width: 80%;
+}
+
+.table-details.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.table-details-header {
+    display: flex;
+    padding-bottom: 20px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+.table-details-header .table-details-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.table-details-header .btn-table-details-close {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.table-details-body {
+    padding-top: 20px;
+}
+
+.table-details input[type=number] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.table-details input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 10px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#overlay {
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+}
+
+#overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
